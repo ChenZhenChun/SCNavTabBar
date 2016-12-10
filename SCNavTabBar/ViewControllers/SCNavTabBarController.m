@@ -266,7 +266,9 @@
 }
 
 - (void)arrowRightButtonPressed {
-    _MyBlock();
+    if (_MyBlock) {
+        _MyBlock();
+    }
 }
 
 @end
