@@ -130,9 +130,9 @@
     _navTabBar.tabDefaultPadding = self.tabDefaultPadding;
     [_navTabBar updateData];
     if (!_mainViewH) {
-        _mainViewH = SCREEN_HEIGHT - _navTabBar.frame.origin.y - _navTabBar.frame.size.height - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT;
+        _mainViewH = SCREEN_HEIGHT - _navTabBar.frame.origin.y- STATUS_BAR_HEIGHT-NAVIGATION_BAR_HEIGHT;
     }
-    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(DOT_COORDINATE, _navTabBar.frame.origin.y + _navTabBar.frame.size.height, SCREEN_WIDTH, _mainViewH)];
+    _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(DOT_COORDINATE, _navTabBar.frame.origin.y + _navTabBar.frame.size.height, SCREEN_WIDTH, _mainViewH-_navTabBar.frame.size.height)];
     _mainView.delegate = self;
     _mainView.pagingEnabled = YES;
     _mainView.bounces = _mainViewBounces;
@@ -275,4 +275,4 @@
 
 // 版权属于原作者
 // http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com 
+// 发布代码于最专业的源码分享网站: Code4App.com
